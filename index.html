@@ -1,0 +1,37 @@
+<html>
+<head><style> #sc {width: 20px; border: 0px;}</style></head>
+<body>
+<form name="play" ENCTYPE="TEXT/PLAIN">
+<input type="radio" name="ob" value="0" onClick="pl()">Rock
+<input type="radio" name="ob" value="1" onClick="pl()">Paper
+<input type="radio" name="ob" value="2" onClick="pl()">Scissor
+
+<br><br><table border=1px>
+	<tr><th>Player</th><th>Computer</th></tr><tr>
+<td><input id="sc" type="number" name="x" value="0" readonly></td>
+<td><input id="sc" type="number" name="y" value="0" readonly></td>
+</tr></table>
+<script>
+	 function win(){
+		alert ("You won!");  play.x.value++;}
+		function lose(){
+			alert ("Computer won!"); play.y.value++;}
+			
+     function pl(){
+     	var c=Math.floor(Math.random()*3);
+       var p=play.ob.value;
+      if(p==c) {alert ("Draw");}
+      else if(p==1 && c==0) { win();}
+      else if(p==2 && c==1) {win();}
+      else if(p==0 && c==2) {win();}
+      else if(p==0 && c==1) {lose();}
+      else if(p==1 && c==2) {lose();}
+      else if(p==2 && c==0) {lose();}
+      }
+      
+</script>
+</form>
+
+<br>
+</body>
+</html>
